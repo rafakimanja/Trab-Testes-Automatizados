@@ -17,7 +17,6 @@ Desenvolvimento   | Tecnologia
 ------------------|-----------
 Sistema           | JavaScript
 Testes Unitários  | Jest
-Mocks             | Jest
 Teste Sistema     | Selenium
 
 ---
@@ -28,13 +27,13 @@ Para o plano de teste vamos criar 3 testes principais para testar a funcionalida
 
 ### 1. Buscar Criptomoeda
 
-O primeiro teste será o de entrar no site e buscar por uma criptomoeda em específico. Ele deve retornar os dados sobre a moeda em questão
+O primeiro teste será o de entrar no site e buscar por uma criptomoeda em específico, então ele irá comparar se os dados retornados condizem com o esperado, são estes: Nome, Preço e Volume da criptomoeda.
 
 ### 2. Listagem Usando Filtros
 
-Para o segundo teste vamos utilizar a opção de filtros na tabela e analisar se os dados retornados coincidem. 
+Para o segundo teste vamos utilizar a opção de filtros na tabela e selecionar a primeira opção que aparacer, então ele irá comparar se os dados retornados condizem com o esperado, são estes: Nome, Preço e Volume da criptomoeda.
 
 ### 3. Notícias Atuais sobre Memecoin
 
-Para o terceiro teste, queremos saber qual é a última notícia sobre uma moeda em específica do tipo memecoin.
+Para o terceiro teste, queremos saber qual é a notícia mais recente de uma memecoin listada no mercado, o teste compara se o link atual é uma pagina válida de notícias.
 
