@@ -25,19 +25,19 @@ class FiltroCriptomoeda {
     //metodo para abrir o navegador
     async abreNavegador() {
         await this.driver.get(this.url)
-        await sleep(3000)
+        await sleep(5000)
         await this.driver.manage().window().maximize()
-        await sleep(3000)
+        await sleep(5000)
     }
 
     //metodo que abre o filtro da tabela, seleciona uma categoria e aplica o filtro
     async aplicaFiltroCategoria() {
         await this.driver.findElement(this.botaoAbrirFiltro).click()
-        await sleep(3000)
+        await sleep(5000)
         await this.driver.findElement(this.campoFiltroCategoria).click()
-        await sleep(3000)
+        await sleep(5000)
         await this.driver.findElement(this.opcaoCategoria).click()
-        await sleep(3000)
+        await sleep(5000)
         await this.driver.findElement(this.botaoAplicarFiltro).click()
         await sleep(5000)
     }

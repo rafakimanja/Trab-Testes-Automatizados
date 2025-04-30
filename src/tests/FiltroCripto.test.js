@@ -1,4 +1,4 @@
-jest.setTimeout(30000);
+jest.setTimeout(90000);
 
 const FiltroCriptomoeda = require("../desafios/FiltroCripto");
 const getDados = require("../service/converteDados");

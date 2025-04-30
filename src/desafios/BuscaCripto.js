@@ -30,21 +30,21 @@ class BuscaCriptomoeda{
     //metodo para abrir o navegador
     async abreNavegador(){
         this.driver.get(this.url)
-        await sleep(3000)
+        await sleep(5000)
         this.driver.manage().window().maximize()
-        await sleep(3000)
+        await sleep(5000)
     }
 
     //metodo que seleciona a barra de pesquisa do site
     async clicaBarraPesquisa(){
         this.driver.findElement(this.barraPesquisa).click()
-        await sleep(3000)
+        await sleep(5000)
     }
 
     //metodo que insere a moeda buscada na barra de pesquisa do modal
     async buscaModal(moeda){
         this.driver.findElement(this.barraPesquisaModal).sendKeys(this.moeda)
-        await sleep(3000)
+        await sleep(5000)
     }
 
     //metodo que abre o primeiro resultado da pesquisa
