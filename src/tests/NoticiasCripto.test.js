@@ -1,7 +1,8 @@
+jest.setTimeout(60000);
 
-const NoticiasCriptomoeda = require('./src/desafios/NoticiasCripto')
+const NoticiasCriptomoeda = require('../desafios/NoticiasCripto')
 
-async function teste3() {
+test("Testa automacao de buscar a noticia mais recente de uma memecoin", async () => {
     let noticias = new NoticiasCriptomoeda('memes')
 
     try {
@@ -11,11 +12,10 @@ async function teste3() {
         await noticias.selecionaPrimeiroItem()
         await noticias.navegaParaProjetoRelacionado()
         const url = await noticias.pegaUrl()
-        console.log(url)
+        expect(url).toContain("#News")
     } catch (error) {
         console.error(error)
     } finally {
         await noticias.driver.quit()
     }
-}
-teste3()
+})
