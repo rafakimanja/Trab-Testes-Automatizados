@@ -22,6 +22,7 @@ class NoticiasCriptomoeda {
         this.categoria = categoria
     }
 
+    //metodo que configura o driver do seleniu,
     async init() {
         this.options.setChromeLogFile("NUL")
         this.options.addArguments("--log-level=3")
@@ -29,6 +30,7 @@ class NoticiasCriptomoeda {
         this.driver = await new Builder().forBrowser(Browser.CHROME).setChromeOptions(this.options).build()
     }
 
+    //metodo para abrir o navegador
     async abreNavegador() {
         await this.driver.get(this.url)
         await sleep(1000)
@@ -36,6 +38,7 @@ class NoticiasCriptomoeda {
         await sleep(3000)
     }
 
+     //metodo que abre o filtro da tabela, procura por uma categoria e aplica o filtro
     async aplicaFiltroPorTag() {
         await this.driver.findElement(this.botaoAbrirFiltro).click()
         await sleep(3000)
@@ -49,11 +52,13 @@ class NoticiasCriptomoeda {
         await sleep(5000)
     }
 
+    //metodo que seleciona a primeira opção exibida após os filtros
     async selecionaPrimeiroItem() {
         await this.driver.findElement(this.primeiroItem).click()
         await sleep(10000)
     }
 
+    //metodo que navega até a pagina de notícias atuais sobre aquela moeda
     async navegaParaProjetoRelacionado() {
         await this.driver.findElement(this.abaRelated).click()
         await sleep(5000)
@@ -63,6 +68,7 @@ class NoticiasCriptomoeda {
         await sleep(5000)
     }
 
+    //metodo para pegar a url no atual momento do navegador
     async pegaUrl() {
         return await this.driver.getCurrentUrl()
     }
